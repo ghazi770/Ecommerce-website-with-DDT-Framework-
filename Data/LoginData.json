@@ -1,0 +1,50 @@
+[
+  {
+    "tcId": "TC_LOGIN_01",
+    "description": "Valid login with registered credentials",
+    "email": "ghazi.sham002@mailinator.com",
+    "password": "Shaheen@21",
+    "expectedResult": "pass",
+    "expectedMessage": ""
+  },
+  {
+    "tcId": "TC_LOGIN_05",
+    "description": "Valid email, incorrect password",
+    "email": "ghazi.sham001@mailinator.com",
+    "password": "WrongPassword!",
+    "expectedResult": "fail",
+    "expectedMessage": "Your email or password is incorrect!"
+  },
+  {
+    "tcId": "TC_LOGIN_06",
+    "description": "Unregistered email",
+    "email": "no_such_user_9182@example.com",
+    "password": "AnyPassword1",
+    "expectedResult": "fail",
+    "expectedMessage": "Your email or password is incorrect!"
+  },
+  {
+    "tcId": "TC_LOGIN_07",
+    "description": "Invalid email format",
+    "email": "invalidemail.com",
+    "password": "AnyPassword1",
+    "expectedResult": "fail",
+    "expectedMessage": ""
+  },
+  {
+    "tcId": "TC_LOGIN_11",
+    "description": "SQL injection attempt",
+    "email": "' OR '1'='1",
+    "password": "' OR '1'='1",
+    "expectedResult": "fail",
+    "expectedMessage": ""
+  },
+  {
+    "tcId": "TC_LOGIN_12",
+    "description": "XSS attempt in email field",
+    "email": "<script>alert(1)</script>@test.com",
+    "password": "AnyPassword1",
+    "expectedResult": "fail",
+    "expectedMessage": ""
+  }
+]
